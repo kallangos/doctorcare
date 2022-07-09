@@ -12,20 +12,13 @@ function onScroll() {
 }
 
 function activateMenuAtCurrentSection(sectionName) {
-  // Linha FIXADA no meio da tela
   const targetLine = scrollY + innerHeight / 2
-  // Topo da Sessão
   const sectionTop = sectionName.offsetTop
-  // Altura da Sessão
   const sectionHeight = sectionName.offsetHeight
-  // Limite da sessão
   const sectionEnd = sectionTop + sectionHeight
-  // Linha FIXADA passou do topo da sessão?
   const targetLineCrossSection = targetLine >= sectionTop
   const targetLineEndSection = targetLine <= sectionEnd
-  // Checa se esta DENTRO da Sessão
   const dentroDaSessao = targetLineCrossSection && targetLineEndSection
-  // Recebendo atributos da Sessão "sectionName"
   const sectionID = sectionName.getAttribute(`id`)
   const menuElement = document.querySelector(`.menu a[href*=${sectionID}]`)
 
